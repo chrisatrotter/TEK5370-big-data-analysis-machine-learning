@@ -1,4 +1,4 @@
-# TEK5370 – Big Data
+# TEK5370 – Big Data and Machine Learning Analysis
 Data gathering scripts for querying an InfluxDB instance connected to a Home Assistant setup.
 
 This project was originally developed in a hosted Jupyter Notebook environment but can also be run locally using Python, provided all required packages are installed.
