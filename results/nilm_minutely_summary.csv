@@ -1,0 +1,6 @@
+Appliance,Fuse,Accuracy,Points,Threshold_W
+Main Line (ams_linje6_p),ams_linje6_p,1.0,620274,500
+2nd Floor Lights,08_lysstikk2ndfloor1_active_power,1.0,13316,100
+Solar Input,03_solarinput63a_active_power,1.0,17132,300
+Basement,06_kjeller15a_active_power,1.0,32548,200
+Kitchen Lights,05_kjokkenlys15a_active_power,1.0,5505,50

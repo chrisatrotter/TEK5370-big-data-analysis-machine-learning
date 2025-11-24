@@ -1,0 +1,68 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\providecommand\BKM@entry[2]{}
+\BKM@entry{id=1,dest={73656374696F6E2E31},srcline={52}}{5C3337365C3337375C303030495C3030306E5C303030745C303030725C3030306F5C303030645C303030755C303030635C303030745C303030695C3030306F5C3030306E}
+\citation{tek5370_big_data}
+\citation{chen2016xgboost}
+\BKM@entry{id=2,dest={73656374696F6E2E32},srcline={60}}{5C3337365C3337375C3030304D5C303030655C303030745C303030685C3030306F5C303030645C3030306F5C3030306C5C3030306F5C303030675C30303079}
+\BKM@entry{id=3,dest={73756273656374696F6E2E322E31},srcline={62}}{5C3337365C3337375C303030545C303030685C303030655C3030305C3034305C303030505C303030695C3030306C5C3030306F5C303030745C3030305C3034305C303030485C3030306F5C303030755C303030735C303030655C3030305C3034305C303030315C303030305C303030385C30303078}
+\BKM@entry{id=4,dest={73756273656374696F6E2E322E32},srcline={75}}{5C3337365C3337375C303030415C303030725C303030635C303030685C303030695C303030745C303030655C303030635C303030745C303030755C303030725C30303065}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Methodology}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}The Pilot House 108x}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Architecture}{1}{subsection.2.2}\protected@file@percent }
+\newlabel{sec:architecture}{{\mbox  {II-B}}{1}{Architecture}{subsection.2.2}{}}
+\BKM@entry{id=5,dest={73756273656374696F6E2E322E33},srcline={95}}{5C3337365C3337375C303030445C303030615C303030745C303030615C303030735C303030655C30303074}
+\BKM@entry{id=6,dest={73656374696F6E2E33},srcline={142}}{5C3337365C3337375C303030525C303030655C303030735C303030755C3030306C5C303030745C303030735C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030565C303030695C303030735C303030755C303030615C3030306C5C303030695C303030735C303030615C303030745C303030695C3030306F5C3030306E}
+\BKM@entry{id=7,dest={73756273656374696F6E2E332E31},srcline={145}}{5C3337365C3337375C3030304D5C303030695C3030306E5C303030755C303030745C303030655C3030306C5C303030795C3030305C3034305C3030304E5C3030306F5C3030306E5C3030302D5C303030495C3030306E5C303030745C303030725C303030755C303030735C303030695C303030765C303030655C3030305C3034305C3030304C5C3030306F5C303030615C303030645C3030305C3034305C3030304D5C3030306F5C3030306E5C303030695C303030745C3030306F5C303030725C303030695C3030306E5C303030675C3030305C3034305C3034305C3032345C3030305C3034305C303030315C303030305C303030305C3030305C3034355C3030305C3034305C303030415C303030635C303030635C303030755C303030725C303030615C303030635C30303079}
+\BKM@entry{id=8,dest={73756273656374696F6E2E332E32},srcline={203}}{5C3337365C3337375C303030505C303030655C303030725C3030302D5C303030465C303030755C303030735C303030655C3030305C3034305C3030304D5C303030695C3030306E5C303030755C303030745C303030655C3030306C5C303030795C3030305C3034305C303030505C3030306F5C303030775C303030655C303030725C3030305C3034305C303030465C3030306F5C303030725C303030655C303030635C303030615C303030735C303030745C303030695C3030306E5C30303067}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces End-to-end architecture of the smart home energy monitoring and machine learning pipeline for pilot house 108x. From Schneider PowerTags → InfluxDB → incremental MariaDB archive → Parquet export → training of Random Forest (NILM) and per-fuse XGBoost forecasting models. The system processes over 757,000 real measurements spanning one full month.}}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:architecture}{{1}{2}{End-to-end architecture of the smart home energy monitoring and machine learning pipeline for pilot house 108x. From Schneider PowerTags → InfluxDB → incremental MariaDB archive → Parquet export → training of Random Forest (NILM) and per-fuse XGBoost forecasting models. The system processes over 757,000 real measurements spanning one full month}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Dataset}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Inactive fuses with no data between 2025-10-24 to 2025-11-23. These circuits were either not in use or the PowerTag sensors were disconnected during the measurement period.}}{2}{table.caption.2}\protected@file@percent }
+\newlabel{tab:inactive_fuses}{{I}{2}{Inactive fuses with no data between 2025-10-24 to 2025-11-23. These circuits were either not in use or the PowerTag sensors were disconnected during the measurement period}{table.caption.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces All monitored fuses (one month of data) between 2025-10-24 to 2025-11-23.}}{2}{table.caption.3}\protected@file@percent }
+\newlabel{tab:fuses}{{II}{2}{All monitored fuses (one month of data) between 2025-10-24 to 2025-11-23}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Results and Visualisation}{2}{section.3}\protected@file@percent }
+\newlabel{sec:results}{{III}{2}{Results and Visualisation}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Minutely Non-Intrusive Load Monitoring — 100\% Accuracy}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces The dataset per fuse used to detect from Total Power Only (One-Month Dataset)}}{2}{table.caption.4}\protected@file@percent }
+\newlabel{tab:nilm_results}{{III}{2}{The dataset per fuse used to detect from Total Power Only (One-Month Dataset)}{table.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces minutely NILM detection of the main line (\texttt  {ams\_linje6\_p}) using only total household power. Threshold: 500 W. light green = predicted ON.}}{2}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:nilm_main_line}{{2}{2}{minutely NILM detection of the main line (\texttt {ams\_linje6\_p}) using only total household power. Threshold: 500 W. light green = predicted ON}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Per-Fuse Minutely Power Forecasting}{2}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces minutely NILM detection of basement loads (refrigeration + washing machine) from total power only. Threshold: 200 W. Perfect overlap confirms 100\% accuracy over 32,548 samples.}}{3}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:nilm_basement}{{3}{3}{minutely NILM detection of basement loads (refrigeration + washing machine) from total power only. Threshold: 200 W. Perfect overlap confirms 100\% accuracy over 32,548 samples}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces minutely NILM detection of solar PV input (\texttt  {03\_solarinput63a}) using only aggregate power. Threshold: 300 W. Flawless detection during daylight hours (17,132 samples).}}{3}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:nilm_solar}{{4}{3}{minutely NILM detection of solar PV input (\texttt {03\_solarinput63a}) using only aggregate power. Threshold: 300 W. Flawless detection during daylight hours (17,132 samples)}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces minutely NILM detection of 2nd floor lighting and sockets (\texttt  {08\_lysstikk2ndfloor1}) from total power only. Threshold: 100 W. Perfect disaggregation (13,316 samples).}}{3}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:nilm_2ndfloor}{{5}{3}{minutely NILM detection of 2nd floor lighting and sockets (\texttt {08\_lysstikk2ndfloor1}) from total power only. Threshold: 100 W. Perfect disaggregation (13,316 samples)}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces minutely NILM detection of kitchen lighting (\texttt  {05\_kjokkenlys15a}) using only aggregate power. Threshold: 50 W. 100\% accuracy achieved even on low-power load (5,505 samples).}}{3}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:nilm_kitchen}{{6}{3}{minutely NILM detection of kitchen lighting (\texttt {05\_kjokkenlys15a}) using only aggregate power. Threshold: 50 W. 100\% accuracy achieved even on low-power load (5,505 samples)}{figure.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Per-Fuse Minutely Forecasting Performance (One-Month Dataset, Chronological Test Set)}}{3}{table.caption.10}\protected@file@percent }
+\newlabel{tab:forecast_results}{{IV}{3}{Per-Fuse Minutely Forecasting Performance (One-Month Dataset, Chronological Test Set)}{table.caption.10}{}}
+\BKM@entry{id=9,dest={73656374696F6E2E34},srcline={270}}{5C3337365C3337375C303030435C3030306F5C3030306E5C303030635C3030306C5C303030755C303030735C303030695C3030306F5C3030306E5C3030305C3034305C303030615C3030306E5C303030645C3030305C3034305C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030575C3030306F5C303030725C3030306B}
+\BKM@entry{id=10,dest={73756273656374696F6E2E342E31},srcline={283}}{5C3337365C3337375C303030465C303030755C303030745C303030755C303030725C303030655C3030305C3034305C303030575C3030306F5C303030725C3030306B}
+\citation{KellyKnottenbelt2015UKDALE,NILMMetadataTutorial,REFIT_ElectricalLoadMeasurements_Cleaned}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Last 6 hours of minutely XGBoost forecast for network equipment (\texttt  {09\_internet16a}). RMSE: 0.7 W — effectively at the sensor noise floor. Stable loads are predicted with sub-watt accuracy.}}{4}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:forecast_internet}{{7}{4}{Last 6 hours of minutely XGBoost forecast for network equipment (\texttt {09\_internet16a}). RMSE: 0.7 W — effectively at the sensor noise floor. Stable loads are predicted with sub-watt accuracy}{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Last 6 hours of minutely forecast for 2nd floor lighting and sockets (\texttt  {08\_lysstikk2ndfloor1}). RMSE: 5.9 W — excellent performance on semi-stable load with human switching behaviour.}}{4}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:forecast_2ndfloor}{{8}{4}{Last 6 hours of minutely forecast for 2nd floor lighting and sockets (\texttt {08\_lysstikk2ndfloor1}). RMSE: 5.9 W — excellent performance on semi-stable load with human switching behaviour}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Last 6 hours of minutely forecast for basement loads (refrigeration + washing machine, \texttt  {06\_kjeller15a}). RMSE: 132 W — refrigeration cycles are accurately captured despite irregular compressor behaviour.}}{4}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:forecast_basement}{{9}{4}{Last 6 hours of minutely forecast for basement loads (refrigeration + washing machine, \texttt {06\_kjeller15a}). RMSE: 132 W — refrigeration cycles are accurately captured despite irregular compressor behaviour}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Last 6 hours of minutely forecast for total household power (main line, \texttt  {ams\_linje6\_p}). RMSE: 647 W — the most challenging case due to superposition of all irregular consumption patterns.}}{4}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:forecast_mainline}{{10}{4}{Last 6 hours of minutely forecast for total household power (main line, \texttt {ams\_linje6\_p}). RMSE: 647 W — the most challenging case due to superposition of all irregular consumption patterns}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Conclusion and Future Work}{4}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Future Work}{4}{subsection.4.1}\protected@file@percent }
+\bibstyle{IEEEtran}
+\bibdata{references}
+\bibcite{tek5370_big_data}{{1}{}{{}}{{}}}
+\bibcite{chen2016xgboost}{{2}{}{{}}{{}}}
+\bibcite{KellyKnottenbelt2015UKDALE}{{3}{}{{}}{{}}}
+\bibcite{NILMMetadataTutorial}{{4}{}{{}}{{}}}
+\bibcite{REFIT_ElectricalLoadMeasurements_Cleaned}{{5}{}{{}}{{}}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\gdef \@abspage@last{5}

@@ -1,83 +1,94 @@
+<<<<<<< HEAD
 # TEK5370 – Big Data and Machine Learning Analysis
 Data gathering scripts for querying an InfluxDB instance connected to a Home Assistant setup.
+=======
+# TEK5370 – Smart Grid & IoT: Big Data Project (2025)
+>>>>>>> 551e1e2 (adding group project.)
 
-This project was originally developed in a hosted Jupyter Notebook environment but can also be run locally using Python, provided all required packages are installed.
+**Real-time Energy Monitoring, Archiving, Forecasting & Non-Intrusive Load Monitoring (NILM) · Minutely XGBoost forecasting · Full MariaDB + Parquet archive**
 
----
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![Pandas](https://img.shields.io/badge/pandas-2.0%2B-150458)
+![XGBoost](https://img.shields.io/badge/xgboost-2.0%2B-brightgreen)
+![InfluxDB 1.8](https://img.shields.io/badge/InfluxDB-1.8-orange)
+![MariaDB](https://img.shields.io/badge/MariaDB-10.6%2B-003545)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-# 🚀 Project Overview
+## Project Overview
 
-This repository contains Python code for:
+This repository contains Python code for a **full end-to-end smart home energy monitoring pipeline**:
 
-- Connecting to an InfluxDB instance  
-- Querying measurement data (e.g., power usage)  
-- Cleaning and structuring time-series data  
-- Exporting the processed data to CSV for further analysis  
+- Connects to an InfluxDB 1.8 instance (Home Assistant)
+- Queries, cleans, and structures minutely power measurements
+- Exports data to MariaDB and Parquet for long-term storage
+- Performs **per-fuse minutely forecasting** using XGBoost
+- Conducts **Non-Intrusive Load Monitoring (NILM)** for appliances
+- Fully automated master pipeline via `project.py`
+- Secure remote access via **WireGuard VPN**
 
-Remote access is achieved through a **WireGuard VPN connection**.
-
----
-
-# 🛠 Prerequisites
-
-Before running any scripts, make sure you have:
-
-- Python 3.9+
-- All Python dependencies installed
-- A working WireGuard configuration (the wireguard config can be found here: https://nextcloud.basicinternet.org/s/K7oD4pnHE8s6f9P?dir=/B-BigData_analysis)
-- Network access to the Home Assistant InfluxDB instance over VPN
-
----
-
-# 📦 Python Requirements
-
-Install dependencies:
+## Repository Structure
 
 ```
+.
+├── code/                        # Core Python scripts
+│   ├── check_fuse_data.py
+│   ├── export_fuse_data_daily.py
+│   ├── project.py
+│   └── machine_learning/        # ML pipeline
+│       ├── export_full_archive.py
+│       ├── nilm_per_fuse_detection.py
+│       ├── per_fuse_minutely_forecast_xgboost.py
+│       └── run_machine_learning.py
+├── data/
+│   └── energy_fuse_archive.parquet
+├── env/
+│   └── README.md                # Environment variable management
+├── models/                      # Trained ML models (XGBoost)
+│   ├── per_fuse/*.json
+│   └── xgboost_minutely.json
+├── results/                     # ML outputs
+│   ├── nilm_minutely_summary.csv
+│   ├── per_fuse_results.csv
+│   └── plots/
+│       ├── *.png                # NILM plots
+│       └── per_fuse/*.png       # Per-fuse forecast plots
+├── requirements.txt
+└── README.md
+```
+
+## Prerequisites
+
+- Python 3.9+
+- WireGuard VPN access to your smart home network
+- Access to Home Assistant InfluxDB and MariaDB
+- Required Python packages installed via:
+
+```bash
 pip install -r requirements.txt
 ```
 
-requirements.txt:
+## WireGuard VPN Setup
 
-```
-influxdb-client
-pandas
-matplotlib
-python-dateutil
-```
+1. **macOS (Homebrew)**
 
----
-
-# 🔐 VPN Access Using WireGuard
-
-## 1. Install WireGuard Tools
-
-### macOS (Homebrew)
-```
+```bash
 brew install wireguard-tools
 ```
 
-### Linux (Debian/Ubuntu)
-```
+2. **Linux (Debian/Ubuntu)**
+
+```bash
 sudo apt update
 sudo apt install wireguard
 ```
 
-### Windows  
-Download the official client:  
-https://www.wireguard.com/install/
+3. **Windows**
 
----
+Download the official client: https://www.wireguard.com/install/
 
-# 📄 Using Your WireGuard Configuration
+### Using Your WireGuard Configuration
 
-Save your configuration as:
-
-```
-wireguard.conf
-```
-
-Example:
+Save your configuration as `wireguard.conf`. Example:
 
 ```
 [Interface]
@@ -94,50 +105,75 @@ Endpoint = ae2gdjgkr5pqbdbn.myfritz.net:52623
 PersistentKeepalive = 25
 ```
 
----
+Connect via macOS/Linux:
 
-# 🔌 Connecting Using WireGuard (macOS/Linux)
-
-```
+```bash
 chmod 600 wireguard.conf
-
-# wg-quick up starts the VPN tunnel and keeps it open.
 sudo wg-quick up ./wireguard.conf
-
-# wg-quick down closes the VPN tunnel.
 sudo wg-quick down ./wireguard.conf
+sudo wg  # Verify connection
 ```
 
-Verify connection:
+## Running the Pipeline
 
+### Step 1: Check Fuse Data
+
+```bash
+python3 code/check_fuse_data.py
 ```
-sudo wg
+In this script, we check that we are able to receive data from the fuses.
+
+### Step 2: Export Daily Data to MariaDB
+
+```bash
+python3 code/export_fuse_data_daily.py
 ```
+Here we extract the data from the Influx DB to store for persistent storage to MariaDB.
+
+### Step 3: Run Full ML Pipeline
+
+```bash
+python3 code/machine_learning/run_machine_learning.py
+```
+Finally, we run the machine learning pipeline to forcast based on XGBoost and do a NILM per fuse detection on a minute by minute basis.
+
+### Step 4: Run Full Project (ML pipeline/Check Fuse/Export Daily)
+
+```bash
+python3 code/project.py
+```
+
+This will sequentially:
+- Check fuse data
+- Export InfluxDB → MariaDB
+- Export full archive to Parquet
+- Train per-fuse XGBoost models
+- Perform NILM detection
+- Save all plots and models
 
 ---
 
-# 📊 Running the Data Gathering Script
+# 🌱 Managing Environment Variables
 
-```
-python3 DataGather_1Fuse.py
-```
+This project supports multiple environments using `.env` files stored in
+the **env/** directory.
 
-This script queries InfluxDB, cleans the data, sorts by timestamp, and outputs `datatest.csv`.
 
----
+👉 **See: [`env/README.md`](./env/README.md)**
 
-# 🧪 Troubleshooting
+The environment README explains how to configure and load:
 
-### ModuleNotFoundError: No module named 'influxdb_client'
-```
-pip install influxdb-client
-```
+-   `local.env` -- local development
+-   `dev.env` -- development server
+-   `.env` -- production environment
 
-### Cannot connect to InfluxDB
-Ensure WireGuard is connected.
+To load an environment file into your shell:
+## Authors
+Farah Said Omar\
+Christopher A. Trotter
 
----
+Built during TEK5370 – Smart Grid & IoT, University of Oslo, 2025
 
-# 📬 Support
+## License
 
-For help with WireGuard, Home Assistant access, or InfluxDB queries, open an issue or contact the maintainer.
+MIT License – feel free to use, modify, and impress your professors.
