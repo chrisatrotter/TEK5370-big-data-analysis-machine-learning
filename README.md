@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-# TEK5370 – Big Data and Machine Learning Analysis
-Data gathering scripts for querying an InfluxDB instance connected to a Home Assistant setup.
-=======
 # TEK5370 – Smart Grid & IoT: Big Data Project (2025)
->>>>>>> 551e1e2 (adding group project.)
-
 **Real-time Energy Monitoring, Archiving, Forecasting & Non-Intrusive Load Monitoring (NILM) · Minutely XGBoost forecasting · Full MariaDB + Parquet archive**
 
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
